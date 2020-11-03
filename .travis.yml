@@ -19,7 +19,7 @@ go:
 go_import_path: github.com/dnaeon/go-vcr
 
 before_install:
-- go get github.com/modocache/gover
+  - go get github.com/modocache/gover
 
 install:
   - make get
@@ -29,6 +29,18 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+# Disable version 1.7, 1.8, 1.9 & 1.10
+jobs: 
+  exclude:
+    - arch: ppc64le
+      go: 1.7
+    - arch: ppc64le
+      go: 1.8
+    - arch: ppc64le
+      go: 1.9
+    - arch: ppc64le
+      go: 1.10
 
 matrix:
   allow_failures:
