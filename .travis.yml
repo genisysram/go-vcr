@@ -34,13 +34,13 @@ after_success:
 jobs: 
   exclude:
     - arch: ppc64le
-      go: 1.7
+      go: "1.7"
     - arch: ppc64le
-      go: 1.8
+      go: "1.8"
     - arch: ppc64le
-      go: 1.9
+      go: "1.9"
     - arch: ppc64le
-      go: 1.10
+      go: "1.10"
 
 matrix:
   allow_failures:
